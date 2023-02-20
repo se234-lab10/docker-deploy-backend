@@ -1,4 +1,4 @@
-FROM openjdkL16-jdk-apline
+FROM openjdkL16-jdk-alpine
 RUN addgroup -s spring && adduser -s spring -G spring
 EXPOSE 8080
 
@@ -10,5 +10,5 @@ COPY ${DEPENDENCY}/BOOT_INF/classes /app
 
 ENTRYPOINT [ "java", "-Dspring.profiles.active=${ JAVA_PROFILE}", \
             "-cp","app:app/lib/*","camt.se234.lab10.Lab10Application"]
-            
+
 
